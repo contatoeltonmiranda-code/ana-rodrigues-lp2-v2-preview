@@ -86,7 +86,7 @@ section{position:relative}
 @keyframes ringPulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.8;transform:scale(1.02)}}
 @media(prefers-reduced-motion:reduce){.prod-frame::before,.prod-ring,.prod-glow{animation:none}}
 /* HERO */
-.hero{position:relative;padding:132px 0 148px;background:#F7F4EF url("assets/arte/hero-arte.png") center center/cover no-repeat;overflow:hidden;isolation:isolate}
+.hero{position:relative;padding:132px 0 148px;background:#F7F4EF url("assets/arte/hero-arte.jpg") center center/cover no-repeat;overflow:hidden;isolation:isolate}
 /* foto limpa (sem mascara, sem fade, sem cantos) a ocupar a metade direita inteira */
 .hero::after{content:none}
 .hero .wrap{max-width:1320px}
@@ -420,7 +420,7 @@ footer::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;b
 @media(max-width:960px){
   /* a arte da expert desce para a base: o texto fica sempre sobre fundo liso */
   .hero{padding:56px 0 330px;background:#F7F4EF}
-  .hero::after{content:"";position:absolute;top:auto;right:0;left:0;bottom:0;width:100%;height:330px;z-index:0;pointer-events:none;background:url("assets/arte/hero-arte.png") 78% center/cover no-repeat}
+  .hero::after{content:"";position:absolute;top:auto;right:0;left:0;bottom:0;width:100%;height:330px;z-index:0;pointer-events:none;background:url("assets/arte/hero-arte.jpg") 78% center/cover no-repeat}
   .hero .wrap{max-width:1160px}
   .hero-grid{grid-template-columns:1fr;gap:0}
   .hero-visual{display:none}
@@ -522,7 +522,7 @@ footer::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;b
   <div class="wrap hero-grid">
     <div class="hero-copy sr-hidden">
       <img class="hero-logo" src="assets/logo-primeiras-comidinhas-simples.png" width="1000" height="141" alt="As Primeiras Comidinhas">
-      <span class="eyebrow hero-pill">Curso online de introdução alimentar</span>
+      <span class="eyebrow hero-pill">Curso de introdução alimentar</span>
       <h1>Aprende a alimentar o teu bebé com <span class="txt-grad">segurança e confiança</span></h1>
       <p class="sub">Do primeiro alimento às refeições em família, aprende o que fazer, como adaptar a alimentação e como lidar com as dificuldades mais comuns desde o início da introdução alimentar até aos 24 meses.</p>
       <a href="#investimento" class="btn lg">Começar agora</a>
