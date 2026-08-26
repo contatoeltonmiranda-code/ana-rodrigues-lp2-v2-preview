@@ -329,8 +329,8 @@ section{position:relative}
 /* SEC 8 — SOBRE MIM */
 .sec-sobre{position:relative;background:linear-gradient(120deg,#EBEAE7 0%,#EFEBEF 46%,#F1ECF3 100%);overflow:hidden;padding-top:104px;padding-bottom:75px}
 /* arte da expert ancorada na base da coluna esquerda, com fade no topo e a direita */
-.sec-sobre::before{content:"";position:absolute;left:0;top:0;bottom:0;z-index:0;pointer-events:none;width:min(48%,760px);background:url("assets/arte/sobre-arte.jpg") center center/cover no-repeat;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 18%),linear-gradient(90deg,transparent 0,#000 7%,#000 76%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(180deg,transparent 0,#000 18%),linear-gradient(90deg,transparent 0,#000 7%,#000 76%,transparent 100%);mask-composite:intersect}
-.sec-sobre::after{content:"";position:absolute;left:0;bottom:0;z-index:1;pointer-events:none;width:0;height:0}
+.sec-sobre::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;z-index:0;pointer-events:none;background:url("assets/arte/sobre-arte.jpg") center center/cover no-repeat}
+.sec-sobre::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(238,235,238,0) 0%,rgba(238,235,238,0) 40%,rgba(238,235,238,.35) 43.5%,rgba(238,235,238,.8) 45.5%,rgba(238,235,238,.95) 47%,rgba(238,235,238,.96) 52%,rgba(238,235,238,.96) 100%)}
 .sec-sobre .wrap{position:relative;z-index:2}
 .sobre-split{display:grid;grid-template-columns:.86fr 1.14fr;gap:52px;align-items:stretch}
 .sobre-visual{position:relative;display:flex;align-items:flex-end;justify-content:flex-end;min-height:420px}
@@ -424,8 +424,8 @@ footer::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;b
   .hero .wrap{max-width:1160px}
   .hero-grid{grid-template-columns:1fr;gap:0}
   .hero-visual{display:none}
-  .sec-sobre::before{width:min(78%,420px)}
-  .sec-sobre::after{width:100%;height:100%;background:linear-gradient(90deg,rgba(240,236,240,.42) 0%,rgba(240,236,240,.9) 46%,#F0ECF0 100%)}
+  .sec-sobre::before{top:0;bottom:auto;height:700px;background-position:6% top;background-size:1232px 700px;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 58%,rgba(0,0,0,.5) 80%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 58%,rgba(0,0,0,.5) 80%,transparent 100%)}
+  .sec-sobre::after{top:0;bottom:auto;height:700px;background:linear-gradient(180deg,rgba(238,235,238,0) 0%,rgba(238,235,238,0) 42%,rgba(238,235,238,.55) 66%,rgba(238,235,238,.9) 86%,rgba(238,235,238,.96) 100%)}
   .sobre-final,.cta-dir{margin-left:auto;margin-right:auto;max-width:none}
   .mod-split{grid-template-columns:1fr;gap:34px;margin-top:18px}
   .mod-head{position:static;top:auto}
@@ -502,6 +502,7 @@ footer::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;b
   .marquee-track span{font-size:13px;padding:0 11px}
   .strip .marquee-track{padding:11px 0}
   .strip span{font-size:13px;padding:0 11px}
+  .sec-sobre::before{background-position:24% top}
   .sobre-seal{width:120px;height:120px;bottom:-20px;right:0}
   .seal{width:120px;height:120px}
   .seal .seal-core{width:56%;height:56%}
