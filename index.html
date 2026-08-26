@@ -419,9 +419,16 @@ footer::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;b
   .mod-split{grid-template-columns:.9fr 1.1fr;gap:38px}
 }
 @media(max-width:960px){
-  /* a arte da expert desce para a base: o texto fica sempre sobre fundo liso */
-  .hero{padding:56px 0 330px;background:#F7F4EF}
-  .hero::after{content:"";position:absolute;top:auto;right:0;left:0;bottom:0;width:100%;height:330px;z-index:0;pointer-events:none;background:url("assets/arte/hero-arte.jpg") 78% center/cover no-repeat}
+  /* r13: a arte sai da BASE e passa para o TOPO da seccao, a largura toda.
+     `hero-mobile-arte.jpg` (1080x2800) e a composicao vertical do cliente: a foto
+     ocupa os primeiros 987/2800 do ficheiro (35,25%) e ja traz o fade e o fundo
+     creme gravados no pixel — o resto do canvas e #F7F4EF chapado, a mesma cor de
+     fundo da seccao. Por isso NAO ha opacity, gradiente, mask nem overlay nenhum.
+     padding-top: 91.39% da largura da seccao = exactamente onde a foto acaba
+     (987/1080), mais 18px de respiro — a percentagem resolve contra a largura do
+     bloco pai, que aqui e a mesma a que o `background-size:100%` escala, logo o
+     texto comeca sempre abaixo da Ana em qualquer largura. */
+  .hero{padding:calc(91.39% + 18px) 0 64px;background:#F7F4EF url("assets/arte/hero-mobile-arte.jpg") center top/100% auto no-repeat}
   .hero .wrap{max-width:1160px}
   .hero-grid{grid-template-columns:1fr;gap:0}
   .hero-visual{display:none}
@@ -467,8 +474,7 @@ footer::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;b
   .wrap{padding:0 18px}
   .sec{padding:60px 0}
   .sec-forma{padding-top:0;padding-bottom:60px}
-  .hero{padding:44px 0 300px}
-  .hero::after{height:300px}
+  .hero{padding-bottom:52px}
   .hero-logo{max-width:310px;margin-bottom:16px}
   .hero-pill{font-size:9.6px;letter-spacing:.7px;padding:6px 12px;margin-bottom:14px}
   .hero h1{font-size:clamp(26px,7.4vw,36px)}
