@@ -436,14 +436,18 @@ footer::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;b
   .res-split{grid-template-columns:1fr;gap:34px;max-width:620px}
   .mc-solo{grid-template-columns:1fr;text-align:center;justify-items:center;gap:18px;padding:30px 26px}
   .price-wrap{flex-direction:column;align-items:stretch;max-width:520px}
-  .price-side-shell{flex:auto;align-self:auto;margin-left:0;margin-top:-30px}
-  .price-side{border-radius:0 0 22px 22px;padding:60px 30px 34px}
+  /* r13: no mobile a lista "O teu investimento inclui" vem PRIMEIRO e o card de preco
+     depois — feito so por `order`, a ordem do HTML (e o desktop) fica intacta.
+     O encaixe dos dois cartoes inverte junto: cantos redondos passam para o topo da
+     lista e a sobreposicao de 30px passa a vir de baixo (margin-bottom negativo). */
+  .price-side-shell{order:1;flex:auto;align-self:auto;margin-left:0;margin-bottom:-30px}
+  .price-side{border-radius:22px 22px 0 0;padding:34px 30px 60px}
   .of-bg img{width:325px;opacity:.15}
   .of-bg .b1{top:18px;left:-68px}
   .of-bg .b2{width:300px;bottom:18px;left:-62px}
   .of-bg .b3{width:310px;bottom:56px;right:-66px}
   .of-bg .b4{width:270px;top:-34px;right:-52px;opacity:.10}
-  .price-box-shell{flex:auto;max-width:100%;width:100%}
+  .price-box-shell{order:2;flex:auto;max-width:100%;width:100%}
   .sec-forma .form-box{max-width:620px;top:-75px;margin:0 auto -75px}
   .sec-forma .res-list{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row;gap:12px}
   .sobre-split{grid-template-columns:1fr;gap:60px}
@@ -489,7 +493,7 @@ footer::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;b
   .bm-arrow{width:40px;height:40px}
   .bm-arrow.prev{left:0}
   .bm-arrow.next{right:0}
-  .price-side{padding:56px 22px 30px}
+  .price-side{padding:30px 22px 56px}
   .price-box{padding:34px 22px}
   /* telemovel: so 3 fotos nos cantos (4 grandes poluiam o ecra estreito) e
      ampliacao contida — o dobro do desktop tapava a leitura do H2 */
